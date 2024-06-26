@@ -1,6 +1,6 @@
 import React from 'react';
-import pizza from '../Pizza.png';
-import '../App.css';
+import pizza from './Pizza.png';
+import '../App/App.css';
 
 
 function Business() {

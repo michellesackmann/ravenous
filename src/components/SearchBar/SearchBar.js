@@ -1,5 +1,5 @@
 import React from 'react';
-import background from '../background_image.jpg';
+import background from './background_image.jpg';
 
 function SearchBar() {
     return (
