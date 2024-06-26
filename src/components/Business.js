@@ -1,5 +1,6 @@
 import React from 'react';
 import pizza from '../Pizza.png';
+import '../App.css';
 
 
 function Business() {
@@ -13,17 +14,15 @@ function Business() {
     const reviews = 90;
 
     return (
-        <div>
-            <img src={pizza} height="175"/>
-            <h1>{name}</h1>
-            <ul>
-                <li>{address}</li>
-                <li>{city}</li>
-                <li>{state} {zipcode}</li>
-                <li>{category}</li>
-                <li>{rating} stars</li>
-                <li>{reviews} reviews</li>
-            </ul>
+        <div className='card'>
+            <img src={pizza} height="170"/>
+            <h1 className="card-header">{name}</h1>
+                <p>{address}</p>
+                <p>{city}</p>
+                <p>{state} {zipcode}</p>
+                <p>{category}</p>
+                <p>{rating} stars</p>
+                <p>{reviews} reviews</p>
         </div>
     );
 }

@@ -7,7 +7,7 @@ function BusinessList() {
         businessList.push(Business());
     }
 
-    return <div>{businessList}</div>;
+    return <div className='card-group'>{businessList}</div>;
 }
 
 export default BusinessList;

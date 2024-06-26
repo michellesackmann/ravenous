@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import Business from './components/Business';
 import BusinessList from './components/BusinessList';
+import SearchBar from './components/SearchBar';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <SearchBar />
     <BusinessList />
   </React.StrictMode>
 );
