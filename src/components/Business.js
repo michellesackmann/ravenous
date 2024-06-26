@@ -17,7 +17,7 @@ function Business() {
         <div className='card'>
             <img src={pizza} />
             <h1 className="card-header">{name}</h1>
-            <div className='card-text'>
+            <span className='card-text'>
                 <p className='card-p-left'>
                 {address} <br></br>
                 {city} <br></br>
@@ -28,7 +28,7 @@ function Business() {
                 {rating} stars <br></br>
                 {reviews} reviews
                 </p>
-            </div>
+            </span>
         </div>
     );
 }
