@@ -15,14 +15,20 @@ function Business() {
 
     return (
         <div className='card'>
-            <img src={pizza} height="170"/>
+            <img src={pizza} />
             <h1 className="card-header">{name}</h1>
-                <p>{address}</p>
-                <p>{city}</p>
-                <p>{state} {zipcode}</p>
-                <p>{category}</p>
-                <p>{rating} stars</p>
-                <p>{reviews} reviews</p>
+            <div className='card-text'>
+                <p className='card-p-left'>
+                {address} <br></br>
+                {city} <br></br>
+                {state} {zipcode}
+                </p>
+                <p className='card-p-right'>
+                {category} <br></br>
+                {rating} stars <br></br>
+                {reviews} reviews
+                </p>
+            </div>
         </div>
     );
 }
