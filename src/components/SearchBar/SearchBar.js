@@ -1,9 +1,9 @@
 import React from 'react';
-import background from './background_image.jpg';
+import './SearchBar.css'
 
 function SearchBar() {
     return (
-        <div className='App-header' style={{ backgroundImage: `url(${background})` }}>
+        <div className='search-bar-header'>
             <span className='filter-group'>
                 <button className='filter-button'>Best Match</button>
                 <button className='filter-button'>Highest Rated</button>

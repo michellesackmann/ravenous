@@ -1,9 +1,9 @@
 import React from 'react';
-import pizza from './Pizza.png';
-import '../App/App.css';
+import './Business.css';
 
 
 function Business() {
+    const imgSource = 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg';
     const name = 'MarginOtto Pizzeria';
     const address = '1010 Paddington Way';
     const city = 'Bordertown';
@@ -14,9 +14,9 @@ function Business() {
     const reviews = 90;
 
     return (
-        <div className='card'>
-            <img src={pizza} />
-            <h1 className="card-header">{name}</h1>
+        <div className="card">
+            <img src={imgSource} alt="pizza"/>
+            <h2>{name}</h2>
             <span className='card-text'>
                 <p className='card-p-left'>
                 {address} <br></br>
@@ -24,8 +24,8 @@ function Business() {
                 {state} {zipcode}
                 </p>
                 <p className='card-p-right'>
-                {category} <br></br>
-                {rating} stars <br></br>
+                <p className='card-category'>{category.toUpperCase()}</p>
+                <p className='card-rating'>{rating} stars</p>
                 {reviews} reviews
                 </p>
             </span>
