@@ -43,6 +43,16 @@
     font-size: 0.77rem;
     font-weight: 500;
   }
+
+  .filter-button-active {
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 75px;
+    background-color: transparent;
+    color: goldenrod;
+    font-size: 0.77rem;
+    font-weight: 700;
+  }
   
   .button {
     padding: 10px;
