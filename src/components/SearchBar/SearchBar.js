@@ -1,7 +1,7 @@
-import React, { act, useState } from 'react';
+import React, { useState } from 'react';
 import './SearchBar.css'
 
-function SearchBar() {
+const SearchBar = ({ searchBusinesses }) => {
     const [term, setTerm] = useState('');
     const handleTermChange = (event) => {
         setTerm(event.target.value);
@@ -17,8 +17,9 @@ function SearchBar() {
         setActiveSorting(event.target.value);
     }
 
-    const handleSubmit = () => {
-        console.log(`Searching Yelp with ${term}, ${location}, ${activeSorting}`);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        searchBusinesses(term, location, activeSorting);
     }
 
     return (
@@ -29,12 +30,12 @@ function SearchBar() {
                 value='best_match'
                 onClick={handleSortingClick}>Best Match</button>
                 <button 
-                className={activeSorting === 'highest_rated' ? 'filter-button-active' : 'filter-button'}
-                value='highest_rated'
+                className={activeSorting === 'rating' ? 'filter-button-active' : 'filter-button'}
+                value='rating'
                 onClick={handleSortingClick}>Highest Rated</button>
                 <button 
-                className={activeSorting === 'most_reviewed' ? 'filter-button-active' : 'filter-button'}
-                value='most_reviewed'
+                className={activeSorting === 'review_count' ? 'filter-button-active' : 'filter-button'}
+                value='review_count'
                 onClick={handleSortingClick}>Most Reviewed</button>
             </span>
             <span className='search-group'>

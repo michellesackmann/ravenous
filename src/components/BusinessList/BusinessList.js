@@ -6,14 +6,16 @@ function BusinessList(props) {
     const businesses = props.businessList;
     return (
         <div className='card-group'>
-        {businesses.map((business) => (
+        {businesses?.map((business) => (
           <Business
-          imgSource={business.imgSource} 
+          key={business.id}
+          imgSource={business.image_url} 
           name={business.name} 
-          address={business.address}
-          city={business.city}
-          state={business.state}
-          category={business.category}
+          address={business.location.address1}
+          city={business.location.city}
+          state={business.location.state}
+          zipcode={business.location.zip_code}
+          category={business.categories[0].title}
           rating={business.rating}
           reviews={business.reviews}/>
         ))}

@@ -1,31 +1,27 @@
 import './App.css';
 
+import SearchBusinesses from '../../utilities/YelpApi';
 import SearchBar from '../SearchBar/SearchBar';
 import BusinessList from '../BusinessList/BusinessList';
-
-const business = {
-  imgSource: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
-  name: 'MarginOtto Pizzeria',
-  address: '1010 Paddington Way',
-  city: 'Bordertown',
-  state: 'NY',
-  zipcode: '10101',
-  category: 'Italian',
-  rating: 4.5,
-  reviews: 90,
-}
-
-const businessList = [];
-    for (let i = 0; i < 50; i++) {
-        businessList.push(business);
-    }
+import { useState } from 'react';
 
 function App() {
+  const [businesses, setBusinesses] = useState([]);
+
+  const searchBusinesses = async (term, location, activeSorting) => {
+    const businesses = await SearchBusinesses({
+      category: term, 
+      location: location, 
+      sortOption: activeSorting
+    });
+    setBusinesses(businesses);
+  }
+
   return (
     <div className="App">
       <h1>ravenous</h1>
-      <SearchBar />
-      <BusinessList businessList={businessList}/>
+      <SearchBar searchBusinesses={searchBusinesses}/>
+      <BusinessList businessList={businesses}/>
     </div>
   );
 }
